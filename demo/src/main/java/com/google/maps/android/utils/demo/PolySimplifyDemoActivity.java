@@ -18,11 +18,11 @@ package com.google.maps.android.utils.demo;
 
 import android.graphics.Color;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.PolygonOptions;
-import com.google.android.gms.maps.model.PolylineOptions;
+import com.huawei.hms.maps.CameraUpdateFactory;
+import com.huawei.hms.maps.GoogleMap;
+import com.huawei.hms.maps.model.LatLng;
+import com.huawei.hms.maps.model.PolygonOptions;
+import com.huawei.hms.maps.model.PolylineOptions;
 import com.google.maps.android.PolyUtil;
 
 import java.util.ArrayList;

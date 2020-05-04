@@ -21,8 +21,8 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.widget.Toast;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.model.LatLng;
+import com.huawei.hms.maps.CameraUpdateFactory;
+import com.huawei.hms.maps.model.LatLng;
 import com.google.maps.android.clustering.ClusterManager;
 import com.google.maps.android.utils.demo.model.MyItem;
 

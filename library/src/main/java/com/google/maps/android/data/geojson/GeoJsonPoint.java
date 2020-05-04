@@ -15,7 +15,7 @@
  */
 package com.google.maps.android.data.geojson;
 
-import com.google.android.gms.maps.model.LatLng;
+import com.huawei.hms.maps.model.LatLng;
 import com.google.maps.android.data.Point;
 
 /**

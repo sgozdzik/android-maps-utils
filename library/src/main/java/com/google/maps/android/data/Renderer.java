@@ -16,18 +16,18 @@
 
 package com.google.maps.android.data;
 
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.model.BitmapDescriptor;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.GroundOverlay;
-import com.google.android.gms.maps.model.GroundOverlayOptions;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.Polygon;
-import com.google.android.gms.maps.model.PolygonOptions;
-import com.google.android.gms.maps.model.Polyline;
-import com.google.android.gms.maps.model.PolylineOptions;
+import com.huawei.hms.maps.HuaweiMap;
+import com.huawei.hms.maps.model.BitmapDescriptor;
+import com.huawei.hms.maps.model.BitmapDescriptorFactory;
+import com.huawei.hms.maps.model.GroundOverlay;
+import com.huawei.hms.maps.model.GroundOverlayOptions;
+import com.huawei.hms.maps.model.LatLng;
+import com.huawei.hms.maps.model.Marker;
+import com.huawei.hms.maps.model.MarkerOptions;
+import com.huawei.hms.maps.model.Polygon;
+import com.huawei.hms.maps.model.PolygonOptions;
+import com.huawei.hms.maps.model.Polyline;
+import com.huawei.hms.maps.model.PolylineOptions;
 import com.google.maps.android.R;
 import com.google.maps.android.collections.GroundOverlayManager;
 import com.google.maps.android.collections.MarkerManager;
@@ -88,7 +88,7 @@ public class Renderer {
 
     private static final DecimalFormat sScaleFormat = new DecimalFormat("#.####");
 
-    private GoogleMap mMap;
+    private HuaweiMap mMap;
 
     private final BiMultiMap<Feature> mFeatures = new BiMultiMap<>();
 
@@ -136,7 +136,7 @@ public class Renderer {
      * @param groundOverlayManager ground overlay manager to create ground overlay collection from
      * @param imagesCache an optional ImagesCache to be used for caching images fetched
      */
-    public Renderer(GoogleMap map,
+    public Renderer(HuaweiMap map,
                     Context context,
                     MarkerManager markerManager,
                     PolygonManager polygonManager,
@@ -159,13 +159,13 @@ public class Renderer {
      * @param polylineManager polyline manager to create polyline collection from
      * @param groundOverlayManager ground overlay manager to create ground overlay collection from
      */
-    public Renderer(GoogleMap map, HashMap<? extends Feature, Object> features, MarkerManager markerManager, PolygonManager polygonManager, PolylineManager polylineManager, GroundOverlayManager groundOverlayManager) {
+    public Renderer(HuaweiMap map, HashMap<? extends Feature, Object> features, MarkerManager markerManager, PolygonManager polygonManager, PolylineManager polylineManager, GroundOverlayManager groundOverlayManager) {
         this(map, null, new GeoJsonPointStyle(), new GeoJsonLineStringStyle(), new GeoJsonPolygonStyle(), null, markerManager, polygonManager, polylineManager, groundOverlayManager);
         mFeatures.putAll(features);
         mImagesCache = null;
     }
 
-    private Renderer(GoogleMap map,
+    private Renderer(HuaweiMap map,
                      Set<String> markerIconUrls,
                      GeoJsonPointStyle defaultPointStyle,
                      GeoJsonLineStringStyle defaultLineStringStyle,
@@ -255,7 +255,7 @@ public class Renderer {
      *
      * @return GoogleMap
      */
-    public GoogleMap getMap() {
+    public HuaweiMap getMap() {
         return mMap;
     }
 
@@ -264,7 +264,7 @@ public class Renderer {
      *
      * @param map map to place all objects on
      */
-    public void setMap(GoogleMap map) {
+    public void setMap(HuaweiMap map) {
         mMap = map;
     }
 
@@ -1151,7 +1151,7 @@ public class Renderer {
      * the info window to have custom HTML.
      */
     private void createInfoWindow() {
-        mMarkers.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
+        mMarkers.setInfoWindowAdapter(new HuaweiMap.InfoWindowAdapter() {
 
             public View getInfoWindow(Marker arg0) {
                 return null;
@@ -1183,7 +1183,7 @@ public class Renderer {
      */
     void setOnFeatureClickListener(final Layer.OnFeatureClickListener listener) {
 
-        mPolygons.setOnPolygonClickListener(new GoogleMap.OnPolygonClickListener() {
+        mPolygons.setOnPolygonClickListener(new HuaweiMap.OnPolygonClickListener() {
             @Override
             public void onPolygonClick(Polygon polygon) {
                 if (getFeature(polygon) != null) {
@@ -1196,7 +1196,7 @@ public class Renderer {
             }
         });
 
-        mMarkers.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+        mMarkers.setOnMarkerClickListener(new HuaweiMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
                 if (getFeature(marker) != null) {
@@ -1210,7 +1210,7 @@ public class Renderer {
             }
         });
 
-        mPolylines.setOnPolylineClickListener(new GoogleMap.OnPolylineClickListener() {
+        mPolylines.setOnPolylineClickListener(new HuaweiMap.OnPolylineClickListener() {
             @Override
             public void onPolylineClick(Polyline polyline) {
                 if (getFeature(polyline) != null) {

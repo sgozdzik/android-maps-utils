@@ -16,10 +16,10 @@
 
 package com.google.maps.android.data;
 
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.Polygon;
-import com.google.android.gms.maps.model.Polyline;
+import com.huawei.hms.maps.HuaweiMap;
+import com.huawei.hms.maps.model.Marker;
+import com.huawei.hms.maps.model.Polygon;
+import com.huawei.hms.maps.model.Polyline;
 import com.google.maps.android.data.geojson.GeoJsonLineStringStyle;
 import com.google.maps.android.data.geojson.GeoJsonPointStyle;
 import com.google.maps.android.data.geojson.GeoJsonPolygonStyle;
@@ -183,7 +183,7 @@ public abstract class Layer {
      *
      * @return map on which the layer is rendered
      */
-    public GoogleMap getMap() {
+    public HuaweiMap getMap() {
         return mRenderer.getMap();
     }
 
@@ -193,7 +193,7 @@ public abstract class Layer {
      *
      * @param map to render the layer on, if null the layer is cleared from the current map
      */
-    public void setMap(GoogleMap map) {
+    public void setMap(HuaweiMap map) {
         mRenderer.setMap(map);
     }
 

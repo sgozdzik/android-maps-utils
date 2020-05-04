@@ -21,12 +21,12 @@ import android.graphics.Color;
 
 import androidx.collection.LongSparseArray;
 
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Tile;
-import com.google.android.gms.maps.model.TileProvider;
 import com.google.maps.android.geometry.Bounds;
 import com.google.maps.android.geometry.Point;
 import com.google.maps.android.quadtree.PointQuadTree;
+import com.huawei.hms.maps.model.LatLng;
+import com.huawei.hms.maps.model.Tile;
+import com.huawei.hms.maps.model.TileProvider;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;

@@ -16,7 +16,7 @@
 
 package com.google.maps.android.utils.demo.model;
 
-import com.google.android.gms.maps.model.LatLng;
+import com.huawei.hms.maps.model.LatLng;
 import com.google.maps.android.clustering.ClusterItem;
 
 public class MyItem implements ClusterItem {

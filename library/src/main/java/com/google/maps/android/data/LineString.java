@@ -16,7 +16,7 @@
 
 package com.google.maps.android.data;
 
-import com.google.android.gms.maps.model.LatLng;
+import com.huawei.hms.maps.model.LatLng;
 
 import java.util.List;
 

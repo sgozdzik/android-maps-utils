@@ -15,8 +15,8 @@
  */
 package com.google.maps.android.data.geojson;
 
-import com.google.android.gms.maps.model.PatternItem;
-import com.google.android.gms.maps.model.PolygonOptions;
+import com.huawei.hms.maps.model.PatternItem;
+import com.huawei.hms.maps.model.PolygonOptions;
 import com.google.maps.android.data.Style;
 
 import java.util.Arrays;

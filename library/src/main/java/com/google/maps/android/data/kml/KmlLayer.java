@@ -23,13 +23,13 @@ import android.util.Log;
 import androidx.annotation.RawRes;
 import androidx.fragment.app.FragmentActivity;
 
-import com.google.android.gms.maps.GoogleMap;
 import com.google.maps.android.collections.GroundOverlayManager;
 import com.google.maps.android.data.Layer;
 import com.google.maps.android.collections.MarkerManager;
 import com.google.maps.android.collections.PolygonManager;
 import com.google.maps.android.collections.PolylineManager;
 import com.google.maps.android.data.Renderer;
+import com.huawei.hms.maps.HuaweiMap;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -58,7 +58,7 @@ public class KmlLayer extends Layer {
      * @throws XmlPullParserException if file cannot be parsed
      * @throws IOException if I/O error
      */
-    public KmlLayer(GoogleMap map, int resourceId, Context context)
+    public KmlLayer(HuaweiMap map, int resourceId, Context context)
             throws XmlPullParserException, IOException {
         this(map, context.getResources().openRawResource(resourceId), context, new MarkerManager(map), new PolygonManager(map), new PolylineManager(map), new GroundOverlayManager(map), null);
     }
@@ -74,7 +74,7 @@ public class KmlLayer extends Layer {
      * @throws XmlPullParserException if file cannot be parsed
      * @throws IOException if I/O error
      */
-    public KmlLayer(GoogleMap map, InputStream stream, Context context)
+    public KmlLayer(HuaweiMap map, InputStream stream, Context context)
             throws XmlPullParserException, IOException {
         this(map, stream, context, new MarkerManager(map), new PolygonManager(map), new PolylineManager(map), new GroundOverlayManager(map), null);
     }
@@ -98,7 +98,7 @@ public class KmlLayer extends Layer {
      * @throws XmlPullParserException if file cannot be parsed
      * @throws IOException if I/O error
      */
-    public KmlLayer(GoogleMap map,
+    public KmlLayer(HuaweiMap map,
                     @RawRes int resourceId,
                     Context context,
                     MarkerManager markerManager,
@@ -129,7 +129,7 @@ public class KmlLayer extends Layer {
      * @throws XmlPullParserException if file cannot be parsed
      * @throws IOException if I/O error
      */
-    public KmlLayer(GoogleMap map,
+    public KmlLayer(HuaweiMap map,
                     InputStream stream,
                     Context context,
                     MarkerManager markerManager,

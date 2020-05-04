@@ -16,10 +16,10 @@
 
 package com.google.maps.android.heatmaps;
 
-import com.google.android.gms.maps.model.LatLng;
 import com.google.maps.android.geometry.Point;
 import com.google.maps.android.projection.SphericalMercatorProjection;
 import com.google.maps.android.quadtree.PointQuadTree;
+import com.huawei.hms.maps.model.LatLng;
 
 /**
  * A wrapper class that can be used in a PointQuadTree

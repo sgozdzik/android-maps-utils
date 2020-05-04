@@ -15,9 +15,9 @@
  */
 package com.google.maps.android.data.kml;
 
-import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.PolygonOptions;
-import com.google.android.gms.maps.model.PolylineOptions;
+import com.huawei.hms.maps.model.MarkerOptions;
+import com.huawei.hms.maps.model.PolygonOptions;
+import com.huawei.hms.maps.model.PolylineOptions;
 import com.google.maps.android.data.Feature;
 import com.google.maps.android.data.Geometry;
 

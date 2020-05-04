@@ -15,13 +15,13 @@
  */
 package com.google.maps.android.data.geojson;
 
-import com.google.android.gms.maps.GoogleMap;
 import com.google.maps.android.collections.GroundOverlayManager;
 import com.google.maps.android.collections.MarkerManager;
 import com.google.maps.android.collections.PolygonManager;
 import com.google.maps.android.collections.PolylineManager;
 import com.google.maps.android.data.Feature;
 import com.google.maps.android.data.Renderer;
+import com.huawei.hms.maps.HuaweiMap;
 
 import java.util.HashMap;
 import java.util.Observable;
@@ -45,7 +45,7 @@ public class GeoJsonRenderer extends Renderer implements Observer {
      * @param polylineManager polyline manager to create polyline collection from
      * @param groundOverlayManager ground overlay manager to create ground overlay collection from
      */
-    /* package */ GeoJsonRenderer(GoogleMap map, HashMap<GeoJsonFeature, Object> features, MarkerManager markerManager, PolygonManager polygonManager, PolylineManager polylineManager, GroundOverlayManager groundOverlayManager) {
+    /* package */ GeoJsonRenderer(HuaweiMap map, HashMap<GeoJsonFeature, Object> features, MarkerManager markerManager, PolygonManager polygonManager, PolylineManager polylineManager, GroundOverlayManager groundOverlayManager) {
         super(map, features, markerManager, polygonManager, polylineManager, groundOverlayManager);
     }
 
@@ -55,7 +55,7 @@ public class GeoJsonRenderer extends Renderer implements Observer {
      *
      * @param map GoogleMap to place GeoJsonFeature objects on
      */
-    public void setMap(GoogleMap map) {
+    public void setMap(HuaweiMap map) {
         super.setMap(map);
         for (Feature feature : super.getFeatures()) {
             redrawFeatureToMap((GeoJsonFeature) feature, map);
@@ -123,7 +123,7 @@ public class GeoJsonRenderer extends Renderer implements Observer {
         redrawFeatureToMap(feature, getMap());
     }
 
-    private void redrawFeatureToMap(GeoJsonFeature feature, GoogleMap map) {
+    private void redrawFeatureToMap(GeoJsonFeature feature, HuaweiMap map) {
         removeFromMap(getAllFeatures().get(feature));
         putFeatures(feature, FEATURE_NOT_ON_MAP);
         if (map != null && feature.hasGeometry()) {
