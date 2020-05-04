@@ -16,9 +16,9 @@
 
 package com.google.maps.android.clustering.algo;
 
-import com.google.android.gms.maps.model.LatLng;
 import com.google.maps.android.clustering.Cluster;
 import com.google.maps.android.clustering.ClusterItem;
+import com.huawei.hms.maps.model.LatLng;
 
 import java.util.ArrayList;
 import java.util.Collection;

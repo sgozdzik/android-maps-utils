@@ -57,8 +57,31 @@ android {
     }
 }
 
+ext {
+    lottieVersion = '3.0.7'
+    glideVersion = '4.9.0'
+    roomVersion = '2.2.5'
+    shimmerLayoutVersion = '2.1.0'
+    releaseNote = ""
+    facebookVersion = '5.0.0'
+    facebookAudienceVersion = '5.5.0'
+    mockkVersion = "1.9.3.kotlin12"
+    assertKVersion = "0.21"
+    hwidVersion = "4.0.1.300"
+    rxJava2Version = "2.2.19"
+    rxJavaBridgeVersion = "0.13.7"
+    rxAndroid2Version = "2.1.1"
+    retrofitVersion = "2.4.0"
+    hmsLocationVersion = "4.0.3.301"
+    hmsMapsVersion = "4.0.1.301"
+    googleMapsUtilsVersion = "1.0.2"
+}
+
 dependencies {
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation "com.huawei.hms:hwid:$hwidVersion"
+    implementation "com.huawei.hms:location:$hmsLocationVersion"
+    implementation "com.huawei.hms:maps:$hmsMapsVersion"
     implementation 'androidx.appcompat:appcompat:1.1.0'
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.robolectric:robolectric:4.3.1'

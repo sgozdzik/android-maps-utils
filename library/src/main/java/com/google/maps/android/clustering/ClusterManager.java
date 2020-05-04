@@ -16,9 +16,6 @@
 
 package com.google.maps.android.clustering;
 
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.model.CameraPosition;
-import com.google.android.gms.maps.model.Marker;
 import com.google.maps.android.clustering.algo.Algorithm;
 import com.google.maps.android.clustering.algo.NonHierarchicalDistanceBasedAlgorithm;
 import com.google.maps.android.clustering.algo.PreCachingAlgorithmDecorator;
@@ -27,6 +24,9 @@ import com.google.maps.android.clustering.algo.ScreenBasedAlgorithmAdapter;
 import com.google.maps.android.clustering.view.ClusterRenderer;
 import com.google.maps.android.clustering.view.DefaultClusterRenderer;
 import com.google.maps.android.collections.MarkerManager;
+import com.huawei.hms.maps.HuaweiMap;
+import com.huawei.hms.maps.model.CameraPosition;
+import com.huawei.hms.maps.model.Marker;
 
 import android.content.Context;
 import android.os.AsyncTask;
@@ -43,9 +43,9 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  * <li>{@link com.google.android.gms.maps.GoogleMap.OnMarkerClickListener}</li> </ul>
  */
 public class ClusterManager<T extends ClusterItem> implements
-        GoogleMap.OnCameraIdleListener,
-        GoogleMap.OnMarkerClickListener,
-        GoogleMap.OnInfoWindowClickListener {
+        HuaweiMap.OnCameraIdleListener,
+        HuaweiMap.OnMarkerClickListener,
+        HuaweiMap.OnInfoWindowClickListener {
 
     private final MarkerManager mMarkerManager;
     private final MarkerManager.Collection mMarkers;
@@ -54,7 +54,7 @@ public class ClusterManager<T extends ClusterItem> implements
     private ScreenBasedAlgorithm<T> mAlgorithm;
     private ClusterRenderer<T> mRenderer;
 
-    private GoogleMap mMap;
+    private HuaweiMap mMap;
     private CameraPosition mPreviousCameraPosition;
     private ClusterTask mClusterTask;
     private final ReadWriteLock mClusterTaskLock = new ReentrantReadWriteLock();
@@ -64,11 +64,11 @@ public class ClusterManager<T extends ClusterItem> implements
     private OnClusterItemInfoWindowClickListener<T> mOnClusterItemInfoWindowClickListener;
     private OnClusterClickListener<T> mOnClusterClickListener;
 
-    public ClusterManager(Context context, GoogleMap map) {
+    public ClusterManager(Context context, HuaweiMap map) {
         this(context, map, new MarkerManager(map));
     }
 
-    public ClusterManager(Context context, GoogleMap map, MarkerManager markerManager) {
+    public ClusterManager(Context context, HuaweiMap map, MarkerManager markerManager) {
         mMap = map;
         mMarkerManager = markerManager;
         mClusterMarkers = markerManager.newCollection();
@@ -257,8 +257,8 @@ public class ClusterManager<T extends ClusterItem> implements
      */
     @Override
     public void onCameraIdle() {
-        if (mRenderer instanceof GoogleMap.OnCameraIdleListener) {
-            ((GoogleMap.OnCameraIdleListener) mRenderer).onCameraIdle();
+        if (mRenderer instanceof HuaweiMap.OnCameraIdleListener) {
+            ((HuaweiMap.OnCameraIdleListener) mRenderer).onCameraIdle();
         }
 
         mAlgorithm.onCameraChange(mMap.getCameraPosition());

@@ -19,7 +19,7 @@ package com.google.maps.android.clustering;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.google.android.gms.maps.model.LatLng;
+import com.huawei.hms.maps.model.LatLng;
 
 /**
  * ClusterItem represents a marker on the map.
@@ -29,7 +29,8 @@ public interface ClusterItem {
     /**
      * The position of this marker. This must always return the same value.
      */
-    @NonNull LatLng getPosition();
+    @NonNull
+    LatLng getPosition();
 
     /**
      * The title of this marker.

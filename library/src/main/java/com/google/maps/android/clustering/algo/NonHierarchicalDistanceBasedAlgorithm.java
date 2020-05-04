@@ -16,13 +16,13 @@
 
 package com.google.maps.android.clustering.algo;
 
-import com.google.android.gms.maps.model.LatLng;
 import com.google.maps.android.clustering.Cluster;
 import com.google.maps.android.clustering.ClusterItem;
 import com.google.maps.android.geometry.Bounds;
 import com.google.maps.android.geometry.Point;
 import com.google.maps.android.projection.SphericalMercatorProjection;
 import com.google.maps.android.quadtree.PointQuadTree;
+import com.huawei.hms.maps.model.LatLng;
 
 import java.util.Collection;
 import java.util.Collections;

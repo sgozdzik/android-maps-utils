@@ -16,8 +16,8 @@
 
 package com.google.maps.android.clustering.algo;
 
-import com.google.android.gms.maps.model.CameraPosition;
 import com.google.maps.android.clustering.ClusterItem;
+import com.huawei.hms.maps.model.CameraPosition;
 
 /**
  * This algorithm uses map position for clustering, and should be reclustered on map movement
